@@ -1,0 +1,25 @@
+/*Todo: style the game as good and as smooth as possible, and try to use as much reusable code as possible, as well as variables */
+
+/*? -------- Imports -------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@100;300&family=Ysabeau+Office:wght@100;300&display=swap");
+
+/*? -------- Resets -------- */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*? -------- Variables -------- */
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-ysabeau: "Ysabeau Office", sans-serif;
+}
+
+/*? -------- Main section -------- */
+
+
