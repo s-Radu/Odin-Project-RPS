@@ -6,7 +6,7 @@ const restartButton = document.getElementById("restartBtn");
 // Todo: Ask for user name when the page loads, only runs when the page loads
 
 window.addEventListener("load", () => {
-  playingUser = prompt("Please tell me your name", "");
+  playingUser = prompt("And who am I playing against ?", "");
 });
 
 //Todo: Computer's selectioni
