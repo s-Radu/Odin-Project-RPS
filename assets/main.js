@@ -20,3 +20,11 @@ window.addEventListener("load", () => {
 //Todo: The game runs till someone reaches score of 5
 
 //Todo: Option to restart the game
+
+//? Testing functions / console logs, or whatever else we need to test till we finish the project
+
+function nameTest() {
+  console.log(playingUser);
+}
+
+restartButton.addEventListener("click", nameTest);
