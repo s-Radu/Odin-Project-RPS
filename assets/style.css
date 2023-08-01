@@ -118,9 +118,9 @@ body {
 }
 
 /* ? Transform the text from right to left  */
-.coScore {
-  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
-}
+/* .coScore {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+} */
 
 /*? -------- Restart game -------- */
 
