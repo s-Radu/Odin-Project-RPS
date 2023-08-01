@@ -25,8 +25,15 @@
 
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
+  --textBackground: hsla(0, 0%, 43%, 0.678);
+  --secondBck: hsla(199, 83%, 56%, 0.678);
+  --mainBck: hsla(249, 94%, 65%, 0.568);
 }
 
+/*? -------- Body -------- */
+body {
+  background-color: var(--mainBck);
+}
 /*? -------- Main section -------- */
 
 .main {
@@ -71,7 +78,9 @@
 .coSelection,
 .userSelection,
 .roundWinner,
-.roundWinner {
+.roundWinner,
+.winner,
+.winnerText {
   font-family: var(--font-ysabeau);
   font-size: 1.2rem;
   margin-top: 1rem;
@@ -79,8 +88,15 @@
 .coSelection {
   margin-top: 2rem;
 }
+.winner,
+.winnerText {
+  padding: 0.35rem;
+  border-radius: 1rem;
+  background-color: var(--textBackground);
+  color: var(--white);
+}
 
-/*? -------- Score -------- */
+/*? -------- Score & Overall winner -------- */
 
 .userSelectionWrapper {
   display: flex;
@@ -93,7 +109,35 @@
   font-family: var(--font-ysabeau);
   font-size: 1.2rem;
 }
+
+.winnerWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  align-items: center;
+}
+
 /* ? Transform the text from right to left  */
 .coScore {
   /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+}
+
+/*? -------- Restart game -------- */
+
+.btn {
+  position: absolute;
+  bottom: 10%;
+  border: none;
+  cursor: pointer;
+  background-color: var(--secondBck);
+  font: var(--font-ysabeau);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+.btn:hover {
+  scale: 1.1;
+  transform: translateY(-10%);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
