@@ -1,6 +1,13 @@
 //Todo: Variables
 
+let playingUser;
+const restartButton = document.getElementById("restartBtn");
+
 // Todo: Ask for user name when the page loads, only runs when the page loads
+
+window.addEventListener("load", () => {
+  playingUser = prompt("Please tell me your name", "");
+});
 
 //Todo: Computer's selectioni
 
