@@ -10,12 +10,26 @@ const choices = document.querySelectorAll("#rock, #paper, #scissors");
 //   playingUser = prompt("And who am I playing against ?", "");
 // });
 
-//Todo: User selection
+//Todo: User selection and game itself
 
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     const userChoice = choice.id;
-    console.log(`${userChoice} was clicked`);
+    const coChoice = getRandomChoices();
+    console.log(userChoice);
+    console.log(coChoice);
+
+    if (userChoice === coChoice) {
+      console.log("TIE MUDAFAKAS");
+    } else if (
+      (userChoice === "rock" && coChoice === "scissors") ||
+      (userChoice === "paper" && coChoice === "rock") ||
+      (userChoice === "scissors" && coChoice === "paper")
+    ) {
+      console.log("You win");
+    } else {
+      console.log("Computer wins");
+    }
   });
 });
 
@@ -25,7 +39,7 @@ const coChoices = ["rock", "paper", "scissors"];
 
 function getRandomChoices() {
   const randomIndex = Math.floor(Math.random() * coChoices.length);
-  return randomIndex;
+  return coChoices[randomIndex];
 }
 
 //Todo: The game runs once
