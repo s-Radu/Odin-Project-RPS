@@ -10,6 +10,11 @@ const choices = document.querySelectorAll("#rock, #paper, #scissors");
 //   playingUser = prompt("And who am I playing against ?", "");
 // });
 
+//Todo: Score
+
+userScore = 0;
+coScore = 0;
+
 //Todo: User selection  // done
 
 //Todo: Select the winner
@@ -33,6 +38,11 @@ choices.forEach((choice) => {
 
     let roundWinner = document.getElementById("roundWinner");
 
+    // ? Update user's and computers score based on round winner
+
+    let displayUserScore = document.getElementById("userScore");
+    let displayCoScore = document.getElementById("coScore");
+
     // ? Compare results and decide the winner of the round
 
     if (userChoice === coChoice) {
@@ -43,8 +53,12 @@ choices.forEach((choice) => {
       (userChoice === "scissors" && coChoice === "paper")
     ) {
       roundWinner.innerText = `${playingUser} wins`;
+      userScore++;
+      displayUserScore.innerText = `${playingUser}: ${userScore}`;
     } else {
       roundWinner.innerText = "Computer wins";
+      coScore++;
+      displayCoScore.innerText = `Co: ${coScore}`;
     }
 
     //Todo: The game runs till someone reaches score of 5
