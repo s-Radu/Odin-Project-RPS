@@ -97,8 +97,11 @@ function getRandomChoices() {
 
 function gameRestart() {
   const overallWinner = document.getElementById("overallWinner");
+  let displayUserScore = document.getElementById("userScore");
+  let displayCoScore = document.getElementById("coScore");
+
   overallWinner.classList.add("hidden");
-  userScore.innerText = "";
-  coScore.innerText = "";
+  displayCoScore.innerText = " ";
+  displayUserScore.innerText = " ";
 }
 restartButton.addEventListener("click", gameRestart);
