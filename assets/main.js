@@ -75,11 +75,3 @@ function getRandomChoices() {
 }
 
 //Todo: Option to restart the game  // Done
-
-//? Testing functions / console logs, or whatever else we need to test till we finish the project
-
-function nameTest() {
-  console.log(playingUser);
-}
-
-restartButton.addEventListener("click", nameTest);

@@ -33,6 +33,7 @@
 /*? -------- Body -------- */
 body {
   background-color: var(--mainBck);
+  overflow: hidden;
 }
 /*? -------- Main section -------- */
 
@@ -100,7 +101,7 @@ body {
 
 .userSelectionWrapper {
   display: flex;
-  width: 10rem;
+  width: 15rem;
   margin-top: 1rem;
   justify-content: space-between;
 }
@@ -124,16 +125,31 @@ body {
 
 /*? -------- Restart game -------- */
 
+.overallWinner {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  border-radius: 2rem;
+  background-color: hsla(226, 83%, 42%, 0.534);
+  border: none;
+  z-index: 9;
+}
+.overallWinner.hidden {
+  display: none;
+}
 .btn {
   position: absolute;
-  bottom: 10%;
+  bottom: 40%;
+  left: 45%;
   border: none;
   cursor: pointer;
-  background-color: var(--secondBck);
+  background-color: var(--white);
   font: var(--font-ysabeau);
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: bold;
-  padding: 0.25rem;
+  padding: 0.5rem;
   border-radius: 1rem;
 }
 .btn:hover {
