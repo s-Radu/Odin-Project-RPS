@@ -6,9 +6,10 @@ const choices = document.querySelectorAll("#rock, #paper, #scissors");
 
 // Todo: Ask for user name when the page loads, only runs when the page loads // Done
 
-// window.addEventListener("load", () => {
-//   playingUser = prompt("And who am I playing against ?", "");
-// });
+window.addEventListener("load", () => {
+  answer = prompt("And who am I playing against ?", "");
+  playingUser = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
+});
 
 //Todo: Score
 
@@ -61,7 +62,7 @@ choices.forEach((choice) => {
       displayCoScore.innerText = `Co: ${coScore}`;
     }
 
-    //Todo: The game runs till someone reaches score of 5
+    //Todo: The game runs till someone reaches score of 5 // Done
     if (userScore === 5) {
       const winner = document.getElementById("winner");
       const winnerText = document.getElementById("winnerText");
@@ -93,7 +94,7 @@ function getRandomChoices() {
   return coChoices[randomIndex];
 }
 
-//Todo: Option to restart the game  // Done
+//Todo: Option to restart the game  //
 
 function gameRestart() {
   const overallWinner = document.getElementById("overallWinner");
@@ -101,11 +102,17 @@ function gameRestart() {
   let displayCoScore = document.getElementById("coScore");
   const winner = document.getElementById("winner");
   const winnerText = document.getElementById("winnerText");
+  const showUserSelection = document.getElementById("userSelection");
+  const showCoSelection = document.getElementById("coSelection");
+  let roundWinner = document.getElementById("roundWinner");
 
   winner.classList.remove("winner");
   winnerText.classList.remove("winnerText");
   overallWinner.classList.add("hidden");
 
+  roundWinner.innerText = " ";
+  showUserSelection.innerText = " ";
+  showCoSelection.innerText = " ";
   winner.innerText = " ";
   winnerText.innerText = " ";
   displayCoScore.innerText = " ";
