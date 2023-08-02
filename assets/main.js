@@ -1,4 +1,4 @@
-//Todo: Variables
+//Todo: Variables // done
 
 let playingUser;
 const restartButton = document.getElementById("restartBtn");
@@ -18,9 +18,7 @@ window.addEventListener("load", () => {
 userScore = 0;
 coScore = 0;
 
-//Todo: User selection  // done
-
-//Todo: Select the winner
+//Todo: User selection  and initiation of game // done
 
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
@@ -28,6 +26,8 @@ choices.forEach((choice) => {
     playRound(userChoice);
   });
 });
+
+//Todo: The whole game // done
 
 function playRound(userChoice) {
   // ? Computer's selection
@@ -96,9 +96,11 @@ function getRandomChoice() {
   return coChoices[randomIndex];
 }
 
-//Todo: Option to restart the game  //
+//Todo: Option to restart the game  // done
 
 function gameRestart() {
+  userScore = 0;
+  coScore = 0;
   const overallWinner = document.getElementById("overallWinner");
   let displayUserScore = document.getElementById("userScore");
   let displayCoScore = document.getElementById("coScore");
