@@ -99,8 +99,15 @@ function gameRestart() {
   const overallWinner = document.getElementById("overallWinner");
   let displayUserScore = document.getElementById("userScore");
   let displayCoScore = document.getElementById("coScore");
+  const winner = document.getElementById("winner");
+  const winnerText = document.getElementById("winnerText");
 
+  winner.classList.remove("winner");
+  winnerText.classList.remove("winnerText");
   overallWinner.classList.add("hidden");
+
+  winner.innerText = " ";
+  winnerText.innerText = " ";
   displayCoScore.innerText = " ";
   displayUserScore.innerText = " ";
 }
