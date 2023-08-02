@@ -29,10 +29,11 @@ choices.forEach((choice) => {
     showUserSelection.innerText = `You chose ${userChoice}`;
     showCoSelection.innerText = `Computer chose ${coChoice}`;
 
-    // ? Compare results and decide the winner of the round
+    //? Output the user's and computer's selection and round's winner
 
     let roundWinner = document.getElementById("roundWinner");
-    roundWinner.innerText = "";
+
+    // ? Compare results and decide the winner of the round
 
     if (userChoice === coChoice) {
       roundWinner.innerText = `There is a tie :) `;
@@ -41,7 +42,7 @@ choices.forEach((choice) => {
       (userChoice === "paper" && coChoice === "rock") ||
       (userChoice === "scissors" && coChoice === "paper")
     ) {
-      roundWinner.innerText = "You win ";
+      roundWinner.innerText = `${playingUser} wins`;
     } else {
       roundWinner.innerText = "Computer wins";
     }
