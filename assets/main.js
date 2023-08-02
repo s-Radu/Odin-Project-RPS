@@ -62,6 +62,21 @@ choices.forEach((choice) => {
     }
 
     //Todo: The game runs till someone reaches score of 5
+    if (userScore === 5) {
+      const winner = document.getElementById("winner");
+      const winnerText = document.getElementById("winnerText");
+      const overallWinner = document.getElementById("overallWinner");
+
+      winner.classList.add("winner");
+      winnerText.classList.add("winnerText");
+      winner.innerText = `${playingUser} WINS !!`;
+      winnerText.innerText = "Congrats ";
+      overallWinner.classList.remove("hidden");
+    } else if (coScore === 5) {
+      winner.innerText = "Computer WINS !!";
+      overallWinner.classList.remove("hidden");
+      winnerText.innerText = "Congrats ";
+    }
   });
 });
 
@@ -75,3 +90,11 @@ function getRandomChoices() {
 }
 
 //Todo: Option to restart the game  // Done
+
+function gameRestart() {
+  const overallWinner = document.getElementById("overallWinner");
+  overallWinner.classList.add("hidden");
+  userScore.innerText = "";
+  coScore.innerText = "";
+}
+restartButton.addEventListener("click", gameRestart);
