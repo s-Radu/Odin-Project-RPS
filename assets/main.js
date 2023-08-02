@@ -69,10 +69,14 @@ choices.forEach((choice) => {
 
       winner.classList.add("winner");
       winnerText.classList.add("winnerText");
+
       winner.innerText = `${playingUser} WINS !!`;
       winnerText.innerText = "Congrats ";
       overallWinner.classList.remove("hidden");
     } else if (coScore === 5) {
+      winner.classList.add("winner");
+      winnerText.classList.add("winnerText");
+
       winner.innerText = "Computer WINS !!";
       overallWinner.classList.remove("hidden");
       winnerText.innerText = "Congrats ";
