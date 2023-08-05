@@ -34,8 +34,14 @@ function getUserName() {
     alert("Please enter player's name.");
     return;
   }
-  playingUser =
-    userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+  playingUser = capitulize(userName)
+}
+
+function capitulize(str) {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 }
 
 //Todo: Score // done
