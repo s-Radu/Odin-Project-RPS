@@ -8,10 +8,10 @@ const showCoSelection = document.getElementById("coSelection");
 
 // Todo: Ask for user name when the page loads, only runs when the page loads // Done
 
-window.addEventListener("load", () => {
-  answer = prompt("And who am I playing against ?", "");
-  playingUser = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
-});
+// window.addEventListener("load", () => {
+//   answer = prompt("And who am I playing against ?", "");
+//   playingUser = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
+// });
 
 //Todo: Score
 

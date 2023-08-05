@@ -28,11 +28,19 @@
   --textBackground: hsla(0, 0%, 43%, 0.678);
   --secondBck: hsla(199, 83%, 56%, 0.678);
   --mainBck: hsla(249, 94%, 65%, 0.568);
+
+  /*? -------- Text Shadow -------- */
+
+  --shadow: 5px 5px 5px;
 }
 
 /*? -------- Body -------- */
 body {
-  background-color: var(--mainBck);
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/imgs/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 /*? -------- Main section -------- */
@@ -54,12 +62,25 @@ body {
   margin: 2rem;
   border-bottom: 1px solid var(--black);
 }
+
+/*? -------- SVG's -------- */
+
+.rockSVG,
+.paperSVG,
+.scissorsSVG {
+  width: 100px;
+  height: 100px;
+  /*? In order for text shadow to workk on svg's, we gotta user the filter property   */
+  text-shadow: var(--shadow) var(--white);
+  filter: drop-shadow(var(--shadow) var(--white));
+}
+
 /*? -------- Selection -------- */
 
 .selection {
   display: flex;
   justify-content: space-between;
-  width: 25rem;
+  width: 30rem;
 }
 
 .rock,
@@ -92,10 +113,12 @@ body {
 }
 .winner,
 .winnerText {
-  padding: 0.35rem;
+  padding: 0.4rem;
   border-radius: 1rem;
+  font-size: 1.5rem;
   background-color: var(--textBackground);
   color: var(--white);
+  z-index: 10;
 }
 
 /*? -------- Score & Overall winner -------- */
@@ -133,7 +156,7 @@ body {
   left: 1rem;
   right: 1rem;
   border-radius: 2rem;
-  background-color: hsla(226, 83%, 42%, 0.534);
+  background-color: hsla(225, 2%, 45%, 0.534);
   border: none;
   z-index: 9;
 }
@@ -142,9 +165,8 @@ body {
 }
 .btn {
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   left: 45.5%;
-  border: none;
   cursor: pointer;
   background-color: var(--white);
   font: var(--font-ysabeau);
@@ -157,4 +179,39 @@ body {
   scale: 1.1;
   transform: translateY(-10%);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/*? -------- Screen breakpoint -------- */
+
+@media (max-width: 38rem) {
+  .rockSVG,
+  .paperSVG,
+  .scissorsSVG {
+    width: 75px;
+  }
+  .selection {
+    width: 20rem;
+  }
+  .btn {
+    left: 26%;
+    bottom: 2%;
+  }
+  .subtitle {
+    margin: 1rem;
+  }
+  .title {
+    margin-bottom: 0;
+  }
+  .winner {
+    position: absolute;
+    bottom: 23%;
+    left: 25%;
+    background-color: var(--secondBck);
+  }
+  .winnerText {
+    position: absolute;
+    bottom: 15%;
+    left: 37%;
+    background-color: var(--secondBck);
+  }
 }
