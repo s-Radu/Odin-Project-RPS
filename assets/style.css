@@ -148,8 +148,10 @@ body {
 } */
 
 /*? -------- Restart game -------- */
+/*? -------- Start game -------- */
 
-.overallWinner {
+.overallWinner,
+.gameStart {
   position: absolute;
   top: 1rem;
   bottom: 1rem;
@@ -180,7 +182,26 @@ body {
   transform: translateY(-10%);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
+.gameStartLabel {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%);
+  font-family: var(--font-montserrat);
+  font-size: 1.1rem;
+  text-shadow: var(--shadow) var(--white);
+}
+.gameStartInput {
+  position: absolute;
+  left: 54%;
+  top: 50%;
+  transform: translate(-50%);
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: none;
+  text-indent: 0.5rem;
+  caret-color: var(--secondBck);
+}
 /*? -------- Screen breakpoint -------- */
 
 @media (max-width: 38rem) {
@@ -217,5 +238,9 @@ body {
     background-color: var(--secondBck);
     rotate: 10deg;
     font-size: 2.5rem;
+  }
+  .gameStartInput {
+    top: 55%;
+    left: 50%;
   }
 }
