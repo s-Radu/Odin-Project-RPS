@@ -229,7 +229,7 @@ body {
   .winner {
     position: absolute;
     top: 23%;
-    left: 7%;
+    left: 5%;
     background-color: var(--secondBck);
     rotate: -10deg;
     font-size: 2.5rem;
