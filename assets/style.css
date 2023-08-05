@@ -204,14 +204,18 @@ body {
   }
   .winner {
     position: absolute;
-    bottom: 23%;
-    left: 25%;
+    top: 23%;
+    left: 7%;
     background-color: var(--secondBck);
+    rotate: -10deg;
+    font-size: 2.5rem;
   }
   .winnerText {
     position: absolute;
-    bottom: 15%;
-    left: 37%;
+    bottom: 25%;
+    left: 30%;
     background-color: var(--secondBck);
+    rotate: 10deg;
+    font-size: 2.5rem;
   }
 }
