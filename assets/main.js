@@ -5,15 +5,38 @@ const restartButton = document.getElementById("restartBtn");
 const choices = document.querySelectorAll("#rock, #paper, #scissors");
 const showUserSelection = document.getElementById("userSelection");
 const showCoSelection = document.getElementById("coSelection");
+const startGameBtn = document.getElementById("startGameBtn");
+const userNameInput = document.getElementById("userName");
 
 // Todo: Ask for user name when the page loads, only runs when the page loads // Done
 
-// window.addEventListener("load", () => {
-//   answer = prompt("And who am I playing against ?", "");
-//   playingUser = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
-// });
+startGameBtn.addEventListener("click", () => {
+  hideGameStart();
+  getUserName();
+});
+userNameInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    hideGameStart();
+    getUserName();
+  }
+});
+function hideGameStart() {
+  const hideGameStart = document.getElementById("startGame");
+  hideGameStart.classList.add("hidden");
+}
 
-//Todo: Score
+function getUserName() {
+  const userName = userNameInput.value.trim();
+
+  if (userName === "") {
+    alert("Please enter player's name.");
+    return;
+  }
+  playingUser =
+    userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+}
+
+//Todo: Score // done
 
 userScore = 0;
 coScore = 0;

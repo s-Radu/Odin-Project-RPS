@@ -165,6 +165,9 @@ body {
 .overallWinner.hidden {
   display: none;
 }
+.gameStart.hidden {
+  display: none;
+}
 .btn {
   position: absolute;
   bottom: 20%;
@@ -193,7 +196,7 @@ body {
 }
 .gameStartInput {
   position: absolute;
-  left: 54%;
+  left: 57%;
   top: 50%;
   transform: translate(-50%);
   font-size: 1.1rem;
