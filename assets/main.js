@@ -14,12 +14,14 @@ startGameBtn.addEventListener("click", () => {
   hideGameStart();
   getUserName();
 });
+
 userNameInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     hideGameStart();
     getUserName();
   }
 });
+
 function hideGameStart() {
   const hideGameStart = document.getElementById("startGame");
   hideGameStart.classList.add("hidden");
