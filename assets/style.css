@@ -189,7 +189,7 @@ body {
   position: absolute;
   left: 45%;
   top: 50%;
-  transform: translate(-50%);
+  transform: translate(-45%);
   font-family: var(--font-montserrat);
   font-size: 1.1rem;
   text-shadow: var(--shadow) var(--white);
@@ -207,6 +207,23 @@ body {
 }
 /*? -------- Screen breakpoint -------- */
 
+@media (max-width: 1770px) {
+  .gameStartLabel {
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .gameStartInput {
+    max-width: 13rem;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .startGameBtn {
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
 @media (max-width: 38rem) {
   .rockSVG,
   .paperSVG,
@@ -217,7 +234,6 @@ body {
     width: 20rem;
   }
   .btn {
-    left: 26%;
     bottom: 2%;
   }
   .subtitle {
@@ -243,7 +259,7 @@ body {
     font-size: 2.5rem;
   }
   .gameStartInput {
-    top: 60%;
-    left: 50%;
+    max-width: 13rem;
+    top: 58%;
   }
 }
