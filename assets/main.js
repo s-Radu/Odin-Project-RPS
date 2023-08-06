@@ -11,13 +11,11 @@ const userNameInput = document.getElementById("userName");
 // Todo: Ask for user name when the page loads, only runs when the page loads // Done
 
 startGameBtn.addEventListener("click", () => {
-  hideGameStart();
   getUserName();
 });
 
 userNameInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    hideGameStart();
     getUserName();
   }
 });
@@ -29,12 +27,15 @@ function hideGameStart() {
 
 function getUserName() {
   const userName = userNameInput.value.trim();
+  playingUser = capitulize(userName);
 
   if (userName === "") {
     alert("Please enter player's name.");
     return;
+    //? Hide the game start has been added to the if statement, to prevent the game start wrapper to be hidden if the input it's empty
+  } else {
+    hideGameStart();
   }
-  playingUser = capitulize(userName)
 }
 
 function capitulize(str) {
