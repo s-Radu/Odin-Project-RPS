@@ -8,7 +8,7 @@ const showCoSelection = document.getElementById("coSelection");
 const startGameBtn = document.getElementById("startGameBtn");
 const userNameInput = document.getElementById("userName");
 
-// Todo: Ask for user name when the page loads, only runs when the page loads // Done
+//? Game start
 
 startGameBtn.addEventListener("click", () => {
   getUserName();
@@ -25,6 +25,8 @@ function hideGameStart() {
   hideGameStart.classList.add("hidden");
 }
 
+// Todo: Ask for user name when the page loads, only runs when the page loads // Done
+//? Capitulize the first letter of each word ( if multiple mwords are inputed ) and trigget the game start only if input field has value
 function getUserName() {
   const userName = userNameInput.value.trim();
   playingUser = capitulize(userName);
