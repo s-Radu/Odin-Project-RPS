@@ -8,6 +8,15 @@ const showCoSelection = document.getElementById("coSelection");
 const startGameBtn = document.getElementById("startGameBtn");
 const userNameInput = document.getElementById("userName");
 
+// TODO: Add arrays of strings that will be used when the anyone wins, make about 4-5 and randomly choose one of them, than change the text under computer wins // Done
+
+const userLines = ["Good game", "Almost lost", "POWER", "Eh. na"];
+const coLines = ["Sad innit?", "Oopsie", "Computer good", "Ha, you lost"];
+
+function getRandomWin(arr) {
+  return arr[(Math.random() * arr.length) | 0];
+}
+
 //? Game start
 
 startGameBtn.addEventListener("click", () => {
@@ -58,6 +67,7 @@ choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     const userChoice = choice.id;
     playRound(userChoice);
+    // console.log(getRandomWin(userLines), getRandomWin(coLines));
   });
 });
 
@@ -104,9 +114,10 @@ function playRound(userChoice) {
     winner.classList.add("winner");
     winnerText.classList.add("winnerText");
 
-    winner.innerText = `${playingUser} WINS !!`;
-    winnerText.innerText = "Congrats ";
     overallWinner.classList.remove("hidden");
+
+    winner.innerText = `${playingUser} WINS !!`;
+    winnerText.innerText = `${getRandomWin(userLines)}`;
   } else if (coScore === 5) {
     const winner = document.getElementById("winner");
     const winnerText = document.getElementById("winnerText");
@@ -115,9 +126,10 @@ function playRound(userChoice) {
     winner.classList.add("winner");
     winnerText.classList.add("winnerText");
 
-    winner.innerText = "Computer WINS !!";
     overallWinner.classList.remove("hidden");
-    winnerText.innerText = "Congrats ";
+
+    winner.innerText = "Computer WINS !!";
+    winnerText.innerText = `${getRandomWin(coLines)}`;
   }
 }
 
