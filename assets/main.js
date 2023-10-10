@@ -19,9 +19,7 @@ function getRandomWin(arr) {
 
 //? Game start
 
-startGameBtn.addEventListener("click", () => {
-  getUserName();
-});
+startGameBtn.addEventListener("click", getUserName);
 
 userNameInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -35,7 +33,7 @@ function hideGameStart() {
 }
 
 // Todo: Ask for user name when the page loads, only runs when the page loads // Done
-//? Capitulize the first letter of each word ( if multiple mwords are inputed ) and trigget the game start only if input field has value
+//? Capitulize the first letter of each word ( if multiple words are inputed ) and trigger the game start only if input field has value
 function getUserName() {
   const userName = userNameInput.value.trim();
   playingUser = capitulize(userName);
@@ -71,7 +69,7 @@ choices.forEach((choice) => {
   });
 });
 
-//Todo: The whole game // done
+//Todo: The game logic // done
 
 function playRound(userChoice) {
   // ? Computer's selection
@@ -82,11 +80,11 @@ function playRound(userChoice) {
   showCoSelection.innerText = `Computer chose ${coChoice}`;
 
   //? Output the user's and computer's selection and round's winner
-  let roundWinner = document.getElementById("roundWinner");
+  const roundWinner = document.getElementById("roundWinner");
 
   // ? Update user's and computers score based on round winner
-  let displayUserScore = document.getElementById("userScore");
-  let displayCoScore = document.getElementById("coScore");
+  const displayUserScore = document.getElementById("userScore");
+  const displayCoScore = document.getElementById("coScore");
 
   // ? Compare results and decide the winner of the round
   if (userChoice === coChoice) {
@@ -148,11 +146,11 @@ function gameRestart() {
   userScore = 0;
   coScore = 0;
   const overallWinner = document.getElementById("overallWinner");
-  let displayUserScore = document.getElementById("userScore");
-  let displayCoScore = document.getElementById("coScore");
+  const displayUserScore = document.getElementById("userScore");
+  const displayCoScore = document.getElementById("coScore");
   const winner = document.getElementById("winner");
   const winnerText = document.getElementById("winnerText");
-  let roundWinner = document.getElementById("roundWinner");
+  const roundWinner = document.getElementById("roundWinner");
 
   winner.classList.remove("winner");
   winnerText.classList.remove("winnerText");
@@ -167,3 +165,8 @@ function gameRestart() {
   displayUserScore.innerText = " ";
 }
 restartButton.addEventListener("click", gameRestart);
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    gameRestart();
+  }
+});
